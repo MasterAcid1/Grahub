@@ -258,7 +258,7 @@ function teleportToPressPart()
     local humanoidRootPart = character:WaitForChild("HumanoidRootPart")
     local money = leaderstats:WaitForChild("Money")
 
-    local powersFolder = game.Workspace.Tycoons.TycoonUlquiorra.Buttons
+    local powersFolder = game.Workspace.Tycoons[Team].Buttons
     
     if not powersFolder then
         warn("Powers folder not found!")
