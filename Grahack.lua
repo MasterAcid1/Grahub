@@ -143,14 +143,7 @@ function wlkspeed(speed)
         game.Players.LocalPlayer.Character:FindFirstChildOfClass('Humanoid').WalkSpeed = speed
     end
 end
---Tycoondir = game.Workspace.Tycoons
-local player = game.Players.LocalPlayer
-local teams = game:GetService("Teams")
 
-local function getPlayerInfo()
-    local playerTeam = player.Team
-    return playerTeam
-end
 
 local function onCharacterAdded(character)
     -- Re-initialize humanoidRootPart or other necessary parts after character reset
@@ -185,12 +178,48 @@ if button and button:IsA("GuiButton") then
 end
 end
 
+
+local player = game.Players.LocalPlayer
+local teams = game:GetService("Teams")
+
+local function getPlayerInfo()
+    local playerTeam = player.Team
+    return playerTeam
+end
+
 playerteam = getPlayerInfo()
 Team = "NA"
 
-if playerteam and playerteam.Name == "Ulquarro" then Team = "TycoonUlquiorra" elseif playerteam.Name == "Byaku" then Team = "TycoonByakuya" elseif playerteam.Name == "Yamo" then Team = "TycoonYamamoto" end
+if playerteam and playerteam.Name == "Ulquarro" then 
+    Team = "TycoonUlquiorra"
+    elseif playerteam.Name == "Byaku" then 
+    Team = "TycoonByakuya" 
+    elseif playerteam.Name == "Yamo" then 
+    Team = "TycoonYamamoto" 
+    elseif playerteam.Name == "Akin" then
+    Team = "TycoonAskin"
+    elseif playerteam.Name == "Substitute" then
+    Team = "TycoonIchigo"
+    elseif playerteam.name == "Ruki" then
+    Team = "TycoonRukia"
+    elseif playerteam.name == "Grijmmo" then
+    Team = "TycoonGrimmjow"
+    elseif playerteam.name == "Aizone" then
+    Team = "TycoonAizen"
+    elseif playerteam.name == "Visionary" then
+    Team = "TycoonGremmy"
+    elseif playerteam.name == "Staar" then
+    Team = "TycoonStarrk"
+    elseif playerteam.name == "Berserker" then
+    Team = "TycoonKenpachi"
+    elseif playerteam.name == "Shinsu" then
+    Team = "TycoonShunsui"
+    elseif playerteam.name == "Unoha" then
+    Team = "TycoonUnohana"
+    end
 
 print("Team: " .. Team)
+print("Playerteam = " .. playerteam.Name)
 
 
 _G.Autofarmingon = false
@@ -203,7 +232,7 @@ function Startautofarm()
     autofarmThread = task.spawn(function()
         while _G.Autofarmingon do
             teleportToPressPart()
-            wait(1)  -- Adjust the wait time as needed for your game
+            wait(0.45)  -- Adjust the wait time as needed for your game
         end
         autofarmThread = nil  -- Reset the thread when autofarming is turned off
     end)
